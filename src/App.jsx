@@ -3,13 +3,13 @@ import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
 import { useEffect } from 'react';
-import { fetchContacts } from './redux/contactsOps';
-import { getError, getIsLoading } from './redux/contactsSlice';
+import { fetchContacts } from './redux/contacts/operations';
+import { selectError, selectIsLoading } from './redux/contacts/selectors';
 
 export default function App() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
