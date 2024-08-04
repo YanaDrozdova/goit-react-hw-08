@@ -1,0 +1,56 @@
+.form {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.userInfo {
+    height: 24px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.userInfo:focus,
+.userInfo:hover {
+    border: 1px solid #007bff;
+    border-radius: 4px;
+}
+
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    padding: 8px 16px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    outline: none;
+    margin-top: 4px;
+}
+
+.button:hover {
+    background-color: #3193fc;
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+.error {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    width: 100%;
+    color: red;
+    font-size: 0.875rem;
+    padding-bottom: 4px;
+}
