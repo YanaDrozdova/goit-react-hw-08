@@ -13,11 +13,6 @@ import { selectIsRefreshing } from './redux/auth/selectors';
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
-// import HomePage from './pages/HomePage/HomePage';
-// import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
-// import LoginPage from './pages/LoginPage/LoginPage';
-// import ContactsPage from './pages/ContactsPage/ContactsPage';
-
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() =>
   import('./pages/RegistrationPage/RegistrationPage')
@@ -28,11 +23,8 @@ const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
 export default function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
 
   useEffect(() => {
-    // dispatch(fetchContacts());
     dispatch(refreshUser());
   }, [dispatch]);
 
@@ -71,12 +63,5 @@ export default function App() {
         </Routes>
       </Suspense>
     </Layout>
-    // <div>
-    //   <h1 className="title">Phonebook</h1>
-    //   <ContactForm />
-    //   <SearchBox />
-    //   {isLoading && !error && <b>Request in progress...</b>}
-    //   <ContactList />
-    // </div>
   );
 }

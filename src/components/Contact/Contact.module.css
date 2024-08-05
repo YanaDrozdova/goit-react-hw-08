@@ -9,3 +9,47 @@
     vertical-align: middle;
     padding-right: 4px;
 }
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.delBtn {
+    /* align-self: center; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    padding: 4px 8px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    outline: none;
+}
+
+.delBtn:hover {
+    background-color: #3193fc;
+}
+
+.changeBtn {
+    border: none;
+    border-radius: 4px;
+    background-color: #007bffa4;
+    padding: 4px 8px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    outline: none;
+}
+
+.changeBtn:hover {
+    background-color: #3193fcab;
+}
+
+.input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    width: 75%;
+}

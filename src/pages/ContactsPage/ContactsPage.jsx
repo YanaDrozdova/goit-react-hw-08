@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
-import ContactList from '../../components/ContactList/ContactList';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchContacts } from '../../redux/contacts/operations';
 import { selectError, selectIsLoading } from '../../redux/contacts/selectors';
+
+import ContactList from '../../components/ContactList/ContactList';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import SearchBox from '../../components/SearchBox/SearchBox';
+
+import css from './ContactsPage.module.css';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -17,9 +21,11 @@ export default function ContactsPage() {
 
   return (
     <>
-      <ContactForm />
+      <div className={css.wrapper}>
+        <ContactForm />
+        <SearchBox />
+      </div>
       {isLoading && !error && <b>Request in progress...</b>}
-      <SearchBox />
       <ContactList />
     </>
   );
