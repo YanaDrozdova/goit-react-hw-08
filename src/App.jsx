@@ -1,11 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, Suspense, useEffect } from 'react';
-// import ContactForm from './components/ContactForm/ContactForm';
-// import ContactList from './components/ContactList/ContactList';
-// import SearchBox from './components/SearchBox/SearchBox';
 
-// import { fetchContacts } from './redux/contacts/operations';
-// import { selectError, selectIsLoading } from './redux/contacts/selectors';
 import Layout from './components/Layout/Layout';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from './redux/auth/operations';
@@ -62,6 +57,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
-    </Layout>
+          </Layout>
   );
 }

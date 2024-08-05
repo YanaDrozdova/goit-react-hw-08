@@ -12,7 +12,9 @@ export default function Contact({ contact }) {
   const [name, setName] = useState(contact.name);
   const [number, setNumber] = useState(contact.number);
 
-  const handleDelete = () => dispatch(deleteContact(contact.id));
+  const handleDelete = () => {
+    dispatch(deleteContact(contact.id));
+  };
   const handleChange = () => {
     if (isEditing) {
       dispatch(changeContact({ id: contact.id, name, number }));
