@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { HiMiniUser, HiPhone } from 'react-icons/hi2';
 
 import { changeContact, deleteContact } from '../../redux/contacts/operations';
+import Modal from '../Modal/Modal';
 
 import css from './Contact.module.css';
 
@@ -11,10 +12,12 @@ export default function Contact({ contact }) {
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(contact.name);
   const [number, setNumber] = useState(contact.number);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDelete = () => {
     dispatch(deleteContact(contact.id));
   };
+
   const handleChange = () => {
     if (isEditing) {
       dispatch(changeContact({ id: contact.id, name, number }));
@@ -59,9 +62,18 @@ export default function Contact({ contact }) {
         <button type="button" onClick={handleChange} className={css.changeBtn}>
           {isEditing ? 'Save' : 'Edit'}
         </button>
-        <button type="button" onClick={handleDelete} className={css.delBtn}>
+        <button
+          type="button"
+          onClick={() => setIsModalOpen(true)}
+          className={css.delBtn}
+        >
           Delete
         </button>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onConfirm={handleDelete}
+        />
       </div>
     </>
   );
